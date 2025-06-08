@@ -2,6 +2,8 @@
   "name": "flowdsl",
   "displayName": "flowdsl",
   "description": "Node-based game engine DSL support ",
+  "publisher": "Mahsery",
+  "icon": "icon.png",
   "version": "0.0.1",
   "repository": { "type": "git", "url": "https://github.com/Mahsery/flowdsl" },
 
