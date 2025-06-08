@@ -1,65 +1,26 @@
-# flowdsl README
+# FlowDSL VS Code Extension
 
-This is the README for your extension "flowdsl". After writing up a brief description, we recommend including the following sections.
+FlowDSL is a domain-specific language for authoring node-based game logic.  
+This extension adds syntax highlighting for files with the `.flow` extension so you can read and edit FlowDSL sources comfortably in VS Code.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+The grammar recognizes node labels, node types, parameters, string and numeric literals, comments, the arrow operator, and indentation-grouped child nodes.  
+It is designed to make complex branching structures, dialogue trees, and data-flow graphs readable at a glance.
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Build the extension package with `vsce package`.  
+   This creates a file named `flowdsl-<version>.vsix` in the project root.  
+2. Install it in VS Code with `code --install-extension flowdsl-<version>.vsix`.  
+3. Reload VS Code. Any file ending in `.flow` will now use the FlowDSL grammar automatically.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Example
 
-## Requirements
+```flow
+player_node: Player(name="Aria", hp=120)
+intro: Dialogue("You awake in a dark forest.") -> choice
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+choice: Choice("What will you do?")
+    fight: Combat(enemy="Wolf", hp=40)
+    flee:  Escape(destination="Village")

@@ -3,6 +3,8 @@
   "displayName": "flowdsl",
   "description": "Node-based game engine DSL support ",
   "version": "0.0.1",
+  "repository": { "type": "git", "url": "https://github.com/Mahsery/flowdsl" },
+
   "engines": {
     "vscode": "^1.100.0"
   },
