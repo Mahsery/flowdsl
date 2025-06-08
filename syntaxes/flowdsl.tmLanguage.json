@@ -1,0 +1,29 @@
+{
+  "scopeName": "source.flowdsl",
+  "patterns": [
+    {
+      "match": "^[a-zA-Z0-9_]+:",
+      "name": "entity.name.label.flowdsl"
+    },
+    {
+      "match": "\\b[A-Z][a-zA-Z0-9_]*\\b",
+      "name": "support.class.flowdsl"
+    },
+    {
+      "match": "\\b[a-z][a-zA-Z0-9_]*\\b",
+      "name": "variable.other.flowdsl"
+    },
+    {
+      "match": "->",
+      "name": "keyword.operator.flowdsl"
+    },
+    {
+      "match": "\\\".*?\\\"",
+      "name": "string.quoted.double.flowdsl"
+    },
+    {
+      "match": "\\=",
+      "name": "keyword.operator.assignment.flowdsl"
+    }
+  ]
+}
